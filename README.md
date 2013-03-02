@@ -1,4 +1,4 @@
-# grunt-ic-templates
+# grunt-generatehtml
 
 > A plug-in used to compile templates with supporting JSON into static HTML files.
 
@@ -8,77 +8,42 @@ This plugin requires Grunt `~0.4.0`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-ic-templates --save-dev
+npm install grunt-generatehtml --save-dev
 ```
 
 One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-ic-templates');
+grunt.loadNpmTasks('grunt-generatehtml');
 ```
 
-## The "ic_templates" task
+## The "generatehtml" task
 
 ### Overview
-In your project's Gruntfile, add a section named `ic_templates` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `generatehtml` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  ic_templates: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+  generatehtml: {
+    files: [
+		{src: 'template/index.handlebars', json: 'support/index.json', dest: 'dist/index.html'}
+	]
   },
 })
 ```
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
 ### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+This example demonstrates how to take a Handlebars template, a supporting JSON file to generate a file to a given target.
 
 ```js
 grunt.initConfig({
-  ic_templates: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  ic_templates: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+  generatehtml: {
+    files: [
+		{src: 'template/index.handlebars', json: 'support/index.json', dest: 'dist/index.html'}
+	]
+  }
 })
 ```
 

@@ -1,0 +1,42 @@
+{
+  "name": "grunt-ic-templates",
+  "description": "A plug-in used to compile templates with supporting JSON into static HTML files.",
+  "version": "0.1.0",
+  "homepage": "",
+  "author": {
+    "name": "Intuitive Company",
+    "email": "rrullo@intuitivecompany.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@intuitivecompany.com:com.intuitivecompany.grunt.templates"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt": "~0.4.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
